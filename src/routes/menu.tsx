@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Home } from "lucide-react";
 import { Menu } from "@/components/site/Menu";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 
@@ -37,7 +38,7 @@ function MenuRoute() {
 
 function MenuOnlyHeader() {
   const { lang, setLang } = useI18n();
-  const fullSiteLabel = lang === "mk" ? "Цел сајт" : "Full site";
+  const homeLabel = lang === "mk" ? "Почетна" : "Home";
 
   return (
     <header className="sticky top-0 z-40 border-b border-red-900/15 bg-pink/55 backdrop-blur">
@@ -79,9 +80,11 @@ function MenuOnlyHeader() {
           </div>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-red-900/15 bg-background/80 px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm transition hover:bg-background sm:px-4 sm:py-2 sm:text-sm"
+            aria-label={homeLabel}
+            title={homeLabel}
+            className="inline-flex size-9 items-center justify-center rounded-full border border-red-900/15 bg-background/80 text-foreground shadow-sm transition hover:bg-background sm:size-10"
           >
-            {fullSiteLabel}
+            <Home className="size-4 sm:size-4.5" aria-hidden="true" />
           </a>
         </div>
       </div>
