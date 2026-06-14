@@ -240,97 +240,88 @@ export function Menu({ variant = "section" }: MenuProps) {
           </div>
         </div>
 
-        {isStandalone ? (
-          <div
-            className={`${
-              mobileCategoryOpen ? "hidden" : "mt-8 grid animate-in fade-in slide-in-from-left-3"
-            } gap-2 duration-300 sm:hidden`}
-          >
-            {categories.map((c) => {
-              const Icon = c.icon;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => openMobileCategory(c.id)}
-                  className="group relative isolate min-h-28 overflow-hidden rounded-[1.35rem] px-6 py-5 text-left shadow-sm transition duration-300 hover:-translate-y-0.5 active:scale-[0.99]"
-                  style={{ backgroundColor: c.color }}
-                >
-                  <span className="absolute inset-0 -z-10 bg-gradient-to-br from-white/22 via-white/6 to-transparent" />
-                  <span className="absolute -right-8 -top-10 size-28 rounded-full bg-white/18 blur-sm transition group-active:scale-110" />
-                  <span className="flex h-full items-center justify-between gap-4">
-                    <Icon
-                      className="size-12 shrink-0 text-white drop-shadow-sm"
-                      strokeWidth={1.9}
-                    />
-                    <span className="min-w-0 flex-1 text-center text-sm font-black uppercase tracking-[0.32em] text-white drop-shadow-sm">
-                      {L(c.label, lang)}
-                    </span>
-                    <ChevronRight
-                      className="size-7 shrink-0 text-white drop-shadow-sm transition group-active:translate-x-1"
-                      strokeWidth={2.5}
-                    />
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
-
-        {isStandalone ? (
-          <div
-            className={`${
-              mobileCategoryOpen ? "mt-6 block animate-in fade-in slide-in-from-right-3" : "hidden"
-            } duration-300 sm:hidden`}
-          >
-            <div
-              className="sticky top-[73px] z-20 -mx-4 flex items-center gap-3 border-y border-white/35 px-4 py-3 shadow-sm backdrop-blur"
-              style={{ backgroundColor: current.color }}
-            >
+        <div
+          className={`${
+            mobileCategoryOpen ? "hidden" : "mt-8 grid animate-in fade-in slide-in-from-left-3"
+          } gap-2 duration-300 sm:hidden`}
+        >
+          {categories.map((c) => {
+            const Icon = c.icon;
+            return (
               <button
+                key={c.id}
                 type="button"
-                onClick={() => setMobileCategoryOpen(false)}
-                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/45 bg-white/82 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:-translate-x-0.5 hover:bg-white"
+                onClick={() => openMobileCategory(c.id)}
+                className="group relative isolate min-h-28 overflow-hidden rounded-[1.35rem] px-6 py-5 text-left shadow-sm transition duration-300 hover:-translate-y-0.5 active:scale-[0.99]"
+                style={{ backgroundColor: c.color }}
               >
-                <ArrowLeft className="size-4" />
-                {lang === "mk" ? "Назад" : "Back"}
-              </button>
-              <h3 className="min-w-0 truncate font-display text-xl font-bold text-white drop-shadow-sm">
-                {L(current.label, lang)}
-              </h3>
-            </div>
-
-            <div className="mt-5 grid gap-4">
-              {current.items.map((it) => (
-                <article
-                  key={it.name.en}
-                  className="rounded-2xl border border-border bg-card p-5 cube-shadow transition"
-                >
-                  <div
-                    className="mb-3 h-1.5 w-10 rounded-full"
-                    style={{ background: current.color }}
-                    aria-hidden
+                <span className="absolute inset-0 -z-10 bg-gradient-to-br from-white/22 via-white/6 to-transparent" />
+                <span className="absolute -right-8 -top-10 size-28 rounded-full bg-white/18 blur-sm transition group-active:scale-110" />
+                <span className="flex h-full items-center justify-between gap-4">
+                  <Icon className="size-12 shrink-0 text-white drop-shadow-sm" strokeWidth={1.9} />
+                  <span className="min-w-0 flex-1 text-center text-sm font-black uppercase tracking-[0.32em] text-white drop-shadow-sm">
+                    {L(c.label, lang)}
+                  </span>
+                  <ChevronRight
+                    className="size-7 shrink-0 text-white drop-shadow-sm transition group-active:translate-x-1"
+                    strokeWidth={2.5}
                   />
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h4 className="font-display text-lg font-semibold">{L(it.name, lang)}</h4>
-                    <span className="shrink-0 text-sm font-bold text-foreground/80">
-                      {it.price}
-                    </span>
-                  </div>
-                  {L(it.desc, lang) ? (
-                    <p className="mt-1 text-sm text-foreground/65">{L(it.desc, lang)}</p>
-                  ) : null}
-                </article>
-              ))}
-            </div>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div
+          className={`${
+            mobileCategoryOpen ? "mt-6 block animate-in fade-in slide-in-from-right-3" : "hidden"
+          } duration-300 sm:hidden`}
+        >
+          <div
+            className="sticky top-[73px] z-20 -mx-4 flex items-center gap-3 border-y border-white/35 px-4 py-3 shadow-sm backdrop-blur"
+            style={{ backgroundColor: current.color }}
+          >
+            <button
+              type="button"
+              onClick={() => setMobileCategoryOpen(false)}
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/45 bg-white/82 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:-translate-x-0.5 hover:bg-white"
+            >
+              <ArrowLeft className="size-4" />
+              {lang === "mk" ? "Назад" : "Back"}
+            </button>
+            <h3 className="min-w-0 truncate font-display text-xl font-bold text-white drop-shadow-sm">
+              {L(current.label, lang)}
+            </h3>
           </div>
-        ) : null}
+
+          <div className="mt-5 grid gap-4">
+            {current.items.map((it) => (
+              <article
+                key={it.name.en}
+                className="rounded-2xl border border-border bg-card p-5 cube-shadow transition"
+              >
+                <div
+                  className="mb-3 h-1.5 w-10 rounded-full"
+                  style={{ background: current.color }}
+                  aria-hidden
+                />
+                <div className="flex items-baseline justify-between gap-3">
+                  <h4 className="font-display text-lg font-semibold">{L(it.name, lang)}</h4>
+                  <span className="shrink-0 text-sm font-bold text-foreground/80">{it.price}</span>
+                </div>
+                {L(it.desc, lang) ? (
+                  <p className="mt-1 text-sm text-foreground/65">{L(it.desc, lang)}</p>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </div>
 
         <div
           className={`mt-8 flex flex-wrap gap-2 ${
             isStandalone
               ? "hidden sticky top-[73px] z-20 -mx-4 border-y border-border/70 bg-background/88 px-4 py-3 backdrop-blur sm:flex"
-              : ""
+              : "hidden sm:flex"
           }`}
         >
           {categories.map((c) => (
@@ -355,7 +346,7 @@ export function Menu({ variant = "section" }: MenuProps) {
 
         <div
           className={`mt-6 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${
-            isStandalone ? "hidden sm:grid" : "grid"
+            isStandalone ? "hidden sm:grid" : "hidden sm:grid"
           }`}
         >
           {current.items.map((it) => (
