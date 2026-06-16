@@ -25,18 +25,16 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all ${
         scrolled
-          ? "border-b border-red-900/15 bg-pink/55 backdrop-blur"
-          : "border-b border-red-900/10 bg-pink/40 backdrop-blur"
+          ? "border-b border-red-900/10 bg-white/95 shadow-sm backdrop-blur"
+          : "border-b border-red-900/10 bg-white/92 backdrop-blur"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold">
-          <img
-            src="/scc-logo-white.png"
-            alt=""
-            className="h-10 w-10 shrink-0 object-contain"
-            aria-hidden="true"
-          />
+        <a
+          href="#home"
+          className="truncate text-[1.62rem] leading-none text-[#9f7715] transition hover:text-[#87620f] sm:text-[1.91rem]"
+          style={{ fontFamily: "var(--font-script)" }}
+        >
           <span>Sugar Cube Corner</span>
         </a>
 

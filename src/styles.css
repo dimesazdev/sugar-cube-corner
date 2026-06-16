@@ -40,6 +40,7 @@
 
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Alex Brush", cursive;
 }
 
 :root {

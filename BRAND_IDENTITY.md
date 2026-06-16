@@ -16,13 +16,18 @@ Primary logo asset:
 
 Current usage:
 
-- Navbar logo
 - Footer logo
-- Menu-only route navbar
+
+Navbar brand treatment:
+
+- Text-only `Sugar Cube Corner` wordmark using `Alex Brush`
+- Dark gold color: `#9f7715`
+- Hover color: `#87620f`
+- Navbar background: white/near-white for maximum legibility
 
 Favicon/apple touch icon:
 
-- `/public/scc-transparent.png`
+- `/public/scc-logo.jpg`
 
 Guidelines:
 
@@ -47,6 +52,13 @@ Body font:
 - CSS token: `--font-sans`
 - Used for navigation, body copy, buttons, reviews, menu descriptions, and UI text.
 - Reason: clean, readable, modern, and highly legible on mobile.
+
+Script wordmark font:
+
+- `Alex Brush`
+- CSS token: `--font-script`
+- Used only for the navbar text wordmark.
+- Reason: matches the soft script feeling of the logo while keeping the navbar compact and readable.
 
 Current CSS source:
 

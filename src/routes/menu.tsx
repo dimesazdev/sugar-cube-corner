@@ -41,20 +41,15 @@ function MenuOnlyHeader() {
   const homeLabel = lang === "mk" ? "Почетна" : "Home";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-red-900/15 bg-pink/55 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-red-900/10 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <a
           href="/"
-          className="flex min-w-0 items-center gap-2 font-display text-base font-bold sm:text-lg"
+          className="min-w-0 truncate text-[1.62rem] leading-none text-[#9f7715] transition hover:text-[#87620f] sm:text-[1.91rem]"
+          style={{ fontFamily: "var(--font-script)" }}
           aria-label="Sugar Cube Corner home"
         >
-          <img
-            src="/scc-logo-white.png"
-            alt=""
-            className="h-10 w-10 shrink-0 object-contain"
-            aria-hidden="true"
-          />
-          <span className="truncate">Sugar Cube Corner</span>
+          Sugar Cube Corner
         </a>
 
         <div className="flex shrink-0 items-center gap-2">
